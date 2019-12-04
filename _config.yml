@@ -1,0 +1,13 @@
+theme: jekyll-theme-primer
+
+github:
+  private: false
+  license:
+    name: MIT
+  source:
+    branch: "master"
+    path: "/"
+  repository_url: "https://github.com/harm-smits/42docs"
+
+title: 42 Docs, documentation for all 42 libraries
+description: Find code examples, optimization tricks, and much more.
