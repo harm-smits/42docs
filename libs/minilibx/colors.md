@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Colors
 
 Colors are presented in an int format. We shift bits to use an TRGB format. To

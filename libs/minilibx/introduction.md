@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Introduction
 
 MiniLibX is a tiny graphics library which allows you to do the most basic

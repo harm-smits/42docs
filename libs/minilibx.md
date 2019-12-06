@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # MiniLibX
 
 Because of the poor documentation of MiniLibX, we have decided to write a

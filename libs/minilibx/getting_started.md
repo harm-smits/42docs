@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Getting started
 
 Now that you know what MiniLibX is capable of doing, we will get started with
