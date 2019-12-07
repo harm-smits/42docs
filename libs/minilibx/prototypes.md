@@ -213,7 +213,7 @@ The function prototype is as follows:
 ** @param  int  *endian         a pointer to where the endian is written;
 ** @return char *               the memory address of the image.
 */
-char	*mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian);
+char    *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, int *endian);
 ```
 
 ### mlx_put_image_to_window
@@ -344,7 +344,7 @@ Converts xmp data to a new image instance.
 ** @param  int  *height    a pointer to where the height ought to be written;
 ** @return void *          the image instance.
 */
-void	*mlx_xpm_to_image(void *mlx_ptr, char **xpm_data, int *width, int *height);
+void    *mlx_xpm_to_image(void *mlx_ptr, char **xpm_data, int *width, int *height);
 ```
 
 ### mlx_xpm_file_to_image
@@ -361,7 +361,7 @@ Converts an xmp file to a new image instance.
 ** @param  int  *height    a pointer to where the height ought to be written;
 ** @return void *          the image instance.
 */
-void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
+void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
 ```
 
 ### mlx_png_file_to_image
@@ -378,7 +378,7 @@ Converts a png file to a new image instance.
 ** @param  int  *height    a pointer to where the height ought to be written;
 ** @return void *          the image instance.
 */
-void	*mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
+void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
 ```
 
 ## Mouse functions
