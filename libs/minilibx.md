@@ -2,8 +2,6 @@
 layout: default
 nav_order: 2
 title: MiniLibX
-description: "Documentation on the mandatory MiniLibX in 42"
-permalink: /
 ---
 
 # MiniLibX

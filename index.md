@@ -6,6 +6,18 @@ description: "42Docs is a documentation website for the new 2019 curriculum's as
 permalink: /
 ---
 
+# 42Docs
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
+---
+
 For me, one of the most time consuming things is trying to find out how to god
 damn 42 libraries work. They often come with little to no documentation and most
 of the time only have a baguette version. This makes it a very time consuming
