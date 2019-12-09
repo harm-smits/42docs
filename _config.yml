@@ -1,11 +1,10 @@
-title: "42 Docs, documentation for all 42 libraries"
+title: "42 Docs"
 description: "Find code examples, optimization tricks, and much more."
 
 search_enabled: true
 heading_anchors: true
 color_scheme: dark
 ga_tracking: UA-154240025-1
-permalink: pretty
 
 remote_theme: pmarsceill/just-the-docs
 plugins:
