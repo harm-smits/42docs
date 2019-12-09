@@ -1,8 +1,22 @@
 ---
 layout: default
+nav_order: 2
+title: MiniLibX
+description: "Documentation on the mandatory MiniLibX in 42"
+permalink: /
 ---
 
 # MiniLibX
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
+---
 
 Because of the poor documentation of MiniLibX, we have decided to write a
 somewhat simple tutorial on how to use this obscure library. Feel free to send

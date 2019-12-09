@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Events
+parent: MiniLibX
+nav_order: 5
 ---
 
 # Events
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Events are the foundation of writing interactive applications in MiniLibX. It is
 therefore of essence that you fully comprehend this chapter as this will be of

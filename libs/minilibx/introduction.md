@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Introduction
+parent: MiniLibX
+nav_order: 1
 ---
 
 # Introduction
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 MiniLibX is a tiny graphics library which allows you to do the most basic
 things for rendering something in screens without any knowledge of X-Window and

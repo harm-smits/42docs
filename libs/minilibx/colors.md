@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Colors
+parent: MiniLibX
+nav_order: 2
 ---
 
 # Colors
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Colors are presented in an int format. We shift bits to use an TRGB format. To
 define a color, we initialized it as follows: `0xTTRRGGBB`, where each character

@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Loops
+parent: MiniLibX
+nav_order: 6
 ---
 
 # Loops
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Now that you finally understand the basics of the MiniLibX library, we will
 start with drawing a tiny animation in the window. For this we will be using
