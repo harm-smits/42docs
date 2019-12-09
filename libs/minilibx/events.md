@@ -16,6 +16,8 @@ nav_order: 5
 
 ---
 
+## Introduction
+
 Events are the foundation of writing interactive applications in MiniLibX. It is
 therefore of essence that you fully comprehend this chapter as this will be of
 use in your future graphical projects.

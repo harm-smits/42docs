@@ -16,6 +16,8 @@ nav_order: 1
 
 ---
 
+## Introduction
+
 MiniLibX is a tiny graphics library which allows you to do the most basic
 things for rendering something in screens without any knowledge of X-Window and
 Cocoa. It provides so-called simple window creation, a questionable drawing
