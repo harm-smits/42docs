@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Images
+parent: MiniLibX
+nav_order: 7
 ---
 
 # Images
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Images are a very important tool in MiniLibX in order to embrace its full
 potential. These functions will allow you to read files directly into a image

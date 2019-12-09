@@ -1,10 +1,22 @@
 ---
 layout: default
+title: Home
+nav_order: 1
+description: "42Docs is a documentation website for the new 2019 curriculum's assignment"
+permalink: /
 ---
 
-# Current libraries
+# 42Docs
+{: .no_toc }
 
-- [MiniLibX](./libs/minilibx.html)
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+
+---
 
 For me, one of the most time consuming things is trying to find out how to god
 damn 42 libraries work. They often come with little to no documentation and most
@@ -22,3 +34,7 @@ peer to peer learning system, which means that this process must be mutual
 in its most purest form.
 
 P.S. feel free to give me a star ;)
+
+## Current libraries
+
+- [MiniLibX](./libs/minilibx.html)

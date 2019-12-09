@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Hooks
+parent: MiniLibX
+nav_order: 4
 ---
 
 # Hooks
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 In computer programming, the term hooking covers a range of techniques used to
 alter or augment the behaviour of an operating system, of applications, or of

@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Getting started
+parent: MiniLibX
+nav_order: 3
 ---
 
 # Getting started
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 Now that you know what MiniLibX is capable of doing, we will get started with
 doing some very basic things. Before we can do anything with the MiniLibX

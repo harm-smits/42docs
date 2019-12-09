@@ -1,4 +1,13 @@
-theme: jekyll-theme-cayman
+remote_theme: pmarsceill/just-the-docs
+
+aux_links:
+  "42 docs on github":
+    - "//github.com/harm-smits/42docs"
+
+heading_anchors: true
+color_scheme: "dark"
+
+ga_tracking: "UA-154240025-1"
 
 github:
   private: false

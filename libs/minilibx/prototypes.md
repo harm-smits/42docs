@@ -1,8 +1,20 @@
 ---
 layout: default
+title: Prototypes
+parent: MiniLibX
+nav_order: 9
 ---
 
-# MiniLibX
+# Prototypes
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
 
 MiniLibX is a tiny graphics library which allows you to do the most basic
 things for rendering something. This can vary from making a copy of Wolfenstein,
@@ -10,16 +22,6 @@ to presenting complicated data in a simple form.
 
 It is truly recommended to catch up on bitwise operands if you have no clue
 what they are.
-
-## Colors
-
-Colors a presented in an int format. We shift bits to use an TRGB format. To
-define a color, we initialized it as follows: `0xTTRRGGBB`, where each character
-means the following:
-- `T` Transparency;
-- `R` Red color;
-- `G` Green color;
-- `B` Blue color.
 
 ## Initialization functions
 
@@ -480,4 +482,3 @@ int     mlx_do_key_autorepeaton(void *mlx_ptr);
 ### mlx_do_sync
 
 Has no defined behaviour.
-
