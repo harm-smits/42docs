@@ -16,6 +16,8 @@ nav_order: 6
 
 ---
 
+## Introduction
+
 Now that you finally understand the basics of the MiniLibX library, we will
 start with drawing a tiny animation in the window. For this we will be using
 two new functions, namely `mlx_loop` and `mlx_loop_hook`.
@@ -24,7 +26,9 @@ Loops are a feature of MiniLibX where it will continue to call your hook
 registered in `mlx_loop_hook` to render new frames, which you obviously
 have to pass to the window yourself.
 
-To initiate such a loop, we call the `mlx_loop` function with the `mlx` instance
+## Hooking into loops
+
+To initiate a loop, we call the `mlx_loop` function with the `mlx` instance
 as only parameter, take a look:
 
 ```c

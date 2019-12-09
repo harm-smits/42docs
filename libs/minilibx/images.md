@@ -16,9 +16,13 @@ nav_order: 7
 
 ---
 
+## Introduction
+
 Images are a very important tool in MiniLibX in order to embrace its full
 potential. These functions will allow you to read files directly into a image
 object. This is very useful for textures or sprites ofcourse.
+
+## Reading images
 
 To read from a file to a image object, you need either the XMP or PNG format. In
 order to read we can call the according functions `mlx_xpm_file_to_image` and

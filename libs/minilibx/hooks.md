@@ -22,6 +22,8 @@ other software components by intercepting function calls or messages or events
 passed between software components. Code that handles such intercepted function
 calls, events or messages is called a hook.
 
+## Introduction
+
 Hooking is used for many purposes, including debugging and extending
 functionality. Examples might include intercepting keyboard or mouse event
 messages before they reach an application, or intercepting operating system
@@ -32,7 +34,7 @@ hooking.
 
 Simply put, it is therefore not weird that hooking is the backbone of MiniLibX.
 
-## Hooking example
+## Hooking into key events
 
 Hooking may sound difficult, but it really is not. Let's take a look shall
 we?

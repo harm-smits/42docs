@@ -16,6 +16,8 @@ nav_order: 9
 
 ---
 
+## Introduction
+
 MiniLibX is a tiny graphics library which allows you to do the most basic
 things for rendering something. This can vary from making a copy of Wolfenstein,
 to presenting complicated data in a simple form.

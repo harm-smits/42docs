@@ -16,8 +16,17 @@ nav_order: 3
 
 ---
 
+## Introduction
+
 Now that you know what MiniLibX is capable of doing, we will get started with
-doing some very basic things. Before we can do anything with the MiniLibX
+doing some very basic things. These will provide you with a solid
+understanding of how to write performant code using this library. For a lot of
+projects, performance is of the essence, it is therefore of utmost importance
+that you read through this section thoroughly.
+
+## Initialization
+
+Before we can do anything with the MiniLibX
 library we must include the `<mlx.h>` header to access all the functions and
 we should execute the `mlx_init` function. This will establish a connection
 to the correct graphical system and will return a `void *` which holds the
@@ -60,6 +69,8 @@ int     main(void)
 }       
 ```
 
+## Writing pixels to a image
+
 Now that we have basic window management, we can get started with pushing pixels
 to the window. How you decide to get these pixels is up to you, however, some
 optimized ways of doing this will be discussed. First of all, we should take
@@ -92,9 +103,9 @@ int     main(void)
 ```
 
 That wasn't too bad, was it? Now, we have an image but how exactly do we write
-pixels to this? That is a very good question. For this we need to get the
-memory address on which we will mutate the bytes accordingly. We retrieve this
-address as follows:
+pixels to this? That is a very good question. For this we need to get the memory
+address on which we will mutate the bytes accordingly. We retrieve this address
+as follows:
 
 ```c
 #include <mlx.h>
@@ -148,6 +159,8 @@ void            my_mlx_pixel_put(t_data data, int x, int y, int color)
     *(unsigned int*)dst = *(unsigned int*)color;
 }
 ```
+
+## Pushing images to a window
 
 Now that we can finally create our image, we should also push it to the window,
 so that we can actually see it. This is pretty straight forward, lets take a
