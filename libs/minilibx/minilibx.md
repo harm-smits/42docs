@@ -2,18 +2,8 @@
 layout: default
 nav_order: 2
 title: MiniLibX
----
-
-# MiniLibX
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
-
-
+permalink: libs/minilibx
+has_children: true
 ---
 
 Because of the poor documentation of MiniLibX, we have decided to write a
