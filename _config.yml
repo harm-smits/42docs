@@ -1,23 +1,12 @@
-theme: just-the-docs
-base_url: "/42docs"
+title: "42 Docs, documentation for all 42 libraries"
+description: "Find code examples, optimization tricks, and much more."
 
-aux_links:
-  "42 docs on github":
-    - "//github.com/harm-smits/42docs"
-
+search_enabled: true
 heading_anchors: true
-color_scheme: "dark"
+color_scheme: dark
+ga_tracking: UA-154240025-1
+permalink: pretty
 
-ga_tracking: "UA-154240025-1"
-
-github:
-  private: false
-  license:
-    name: MIT
-  source:
-    branch: "master"
-    path: "/"
-  repository_url: "https://github.com/harm-smits/42docs"
-
-title: 42 Docs, documentation for all 42 libraries
-description: Find code examples, optimization tricks, and much more.
+remote_theme: pmarsceill/just-the-docs
+plugins:
+  - jekyll-remote-theme
