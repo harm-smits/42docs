@@ -200,9 +200,7 @@ we need to do the following:
 
 ```c
 char *mlx_data_addr;
-*(mlx_data_addr + pos + 2) = (char)((color & 0x00ff0000) >> 16);
-*(mlx_data_addr + pos + 1) = (char)((color & 0x0000ff00) >> 8);
-*(mlx_data_addr + pos)     = (char)((color & 0x000000ff) >> 0);
+*(unsigned int *)(mlx_data_addr) = color;
 ```
 
 The function prototype is as follows:
@@ -380,6 +378,7 @@ Converts a png file to a new image instance.
 ** @param  char *filename  the file to load;
 ** @param  int  *width     a pointer to where the width ought to be written;
 ** @param  int  *height    a pointer to where the height ought to be written;
+** @warn   mem_leak        this function has a memory leak, try using xpm instead;
 ** @return void *          the image instance.
 */
 void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
