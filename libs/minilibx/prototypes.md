@@ -122,7 +122,7 @@ therefore suggested to render an image and push that using the
 `mlx_put_image_to_window` function. You can find more about that in the
 scripts section.
 
-```
+```c
 /*
 ** Puts a pixel on the screen.
 **
@@ -186,17 +186,17 @@ set the line size in your given pointer. To get or set the value of the pixel
 as follows:
 
 ```c
-int pos = (y * size_line * (bits_per_pixel / 8) + x * (bits_per_pixel / 8));
+int pos = (y * size_line + x * (bits_per_pixel / 8));
 ```
 
-Here we convert multiply size_line by 5 as we need to skip 5 lines (and yes,
+Here we multiply size_line by `y` 5 as we need to skip 5 lines (and yes,
 line size does not equal the amount of pixels in a line). We then multiply this
-by the amount of bytes each pixel takes up.  We then add the remaining x units
+by the amount of bytes each pixel takes up.  We then add the remaining `x` units
 multiplied by the amount of bytes to align with the final location.
 
 To modify each pixel accordingly with the correct color, we need to do some more
-fancy stuff however. As we need to align the bits accordingly before writing,
-we need to do the following:
+fancy stuff. As we need to align the bits accordingly before writing, we need to
+do the following for the best result:
 
 ```c
 char *mlx_data_addr;
@@ -221,7 +221,9 @@ char    *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, i
 ### mlx_put_image_to_window
 
 Puts an image to the given window instance at location (x,y). This is the
-recommended way to write large amounts of graphical data in one go.
+recommended way to write large amounts of graphical data in one go. Do mind that
+when changing the memory of the locations, it will displayed directly on the
+window.
 
 ```c
 /*
@@ -260,7 +262,8 @@ you have no clue what this concept means.
 ### mlx_mouse_hook
 
 Hook into mouse events. This will trigger every time you click somewhere in the
-given screen.
+given screen. Do mind that currently these mouse events barely work, it is
+therefore suggested to use them.
 
 ```c
 /*
@@ -378,7 +381,8 @@ Converts a png file to a new image instance.
 ** @param  char *filename  the file to load;
 ** @param  int  *width     a pointer to where the width ought to be written;
 ** @param  int  *height    a pointer to where the height ought to be written;
-** @warn   mem_leak        this function has a memory leak, try using xpm instead;
+** @warn   mem_leak        this function has a memory leak, try using xpm
+**                         instead;
 ** @return void *          the image instance.
 */
 void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
