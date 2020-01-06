@@ -72,12 +72,12 @@ int     main(void)
 When you run the code, you can't help but notice that nothing pops up and that
 nothing is being rendered. Well, this obviously has something to do with the
 fact that you are not creating a window yet, so lets try initializing a tiny
-window which will close itself after a few seconds. To achieve this, we will
-simply call the `mlx_new_window` function, which will return a pointer to the
-window we have just created. We can give the window a height, width and a
-title. We then will have to call `mlx_loop` to initiate the window rendering.
-Let's create a window with a width of 1920, a height of 1080 and a name of
-"Hello world!":
+window which will stay open forever. You can close it by pressing `CTRL+C` in
+your terminal. To achieve this, we will simply call the `mlx_new_window`
+function, which will return a pointer to the window we have just created. We can
+give the window a height, width and a title. We then will have to call
+`mlx_loop` to initiate the window rendering. Let's create a window with a width
+of 1920, a height of 1080 and a name of "Hello world!":
 
 ```c
 #include <mlx.h>
@@ -99,10 +99,10 @@ Now that we have basic window management, we can get started with pushing pixels
 to the window. How you decide to get these pixels is up to you, however, some
 optimized ways of doing this will be discussed. First of all, we should take
 into account that the `mlx_pixel_put` function is very, very slow. This is
-because it tries to push it instantly to the window (without waiting for the)
-frame to be entirely rendered. Because of this sole reason, we will have to
-buffer all of our input to an image, which we will then write to the window. All
-of this sounds very complicated, but trust me, its not too bad.
+because it tries to push the pixel instantly to the window (without waiting
+for the frame to be entirely rendered). Because of this sole reason, we will
+have to buffer all of our pixels to a image, which we will then push to the
+window. All of this sounds very complicated, but trust me, its not too bad.
 
 First of all, we should start by understanding what type of image `mlx`
 requires. If we initiate an image, we will have to pass a few pointers to which
@@ -127,9 +127,8 @@ int     main(void)
 ```
 
 That wasn't too bad, was it? Now, we have an image but how exactly do we write
-pixels to this? That is a very good question. For this we need to get the memory
-address on which we will mutate the bytes accordingly. We retrieve this address
-as follows:
+pixels to this?  For this we need to get the memory address on which we will
+mutate the bytes accordingly. We retrieve this address as follows:
 
 ```c
 #include <mlx.h>
@@ -161,7 +160,7 @@ int     main(void)
 ```
 
 Notice how we pass the `bits_per_pixel`, `line_length` and `endian` variables
-by reference. These will be set accordingly by MiniLibX as per described above.
+by reference? These will be set accordingly by MiniLibX as per described above.
 
 Now we have the image address, but still no pixels. Before we start with this,
 we must understand that the bytes are not aligned, this means that the
@@ -196,11 +195,11 @@ void            my_mlx_pixel_put(t_data data, int x, int y, int color)
 }
 ```
 
-Notice that this will cause an issue. As an image is represented in real time in
-a window, changing the same image will cause a bunch of screen-tearing when
+Note that this will cause an issue. Because an image is represented in real time
+in a window, changing the same image will cause a bunch of screen-tearing when
 writing to it. You should therefore create two or more images to hold your
 frames temporarily. You can then write to a temporary image, so that you don't
-write to the currently presented image.
+have to write to the currently presented image.
 
 ## Pushing images to a window
 

@@ -33,7 +33,7 @@ using MiniLibX.
 ### mlx_init
 
 Initializes the mlx library. Must be called before ANY other function. Will
-return NULL if initialization failed
+return NULL if initialization failed.
 
 ```c
 /*
@@ -66,7 +66,7 @@ void    *mlx_new_window(void *mlx_ptr, int size_x, int size_y, char *title);
 
 Clears the current window. This is not a recommended function to use. Instead,
 it is recommended to use the function `mlx_put_image_to_window` with a recycled
-image that you clear.
+image that you have cleared.
 
 ```c
 /*
@@ -81,11 +81,11 @@ int     mlx_clear_window(void *mlx_ptr, void *win_ptr);
 
 ### mlx_destroy_window
 
-Destroys an window instance accordingly.
+Destroys a window instance accordingly.
 
 ```c
 /*
-** Destroys an window instance accordingly.
+** Destroys a window instance accordingly.
 **
 ** @param  void *mlx_ptr the mlx instance;
 ** @param  void *win_ptr the window instance;
@@ -100,8 +100,8 @@ These are functions that can help you with conversions and pixel writing.
 
 ### mlx_get_color_value
 
-Get the color value accordingly from an int. This is useful for converting
-an self-declared int before writing it to certain bits.
+Get the color value accordingly from a int. This is useful for converting a
+self-declared int before writing it to certain bits.
 
 ```c
 /*
@@ -118,9 +118,9 @@ uint    mlx_get_color_value(void *mlx_ptr, int color);
 
 Puts a pixel on the screen. This function is NOT recommended to be used. It
 will lock the window output, force a refresh and a recalculation. It is
-therefore suggested to render an image and push that using the
+therefore suggested to render a image and push that using the
 `mlx_put_image_to_window` function. You can find more about that in the
-scripts section.
+[Getting Started](./getting_started.html) chapter.
 
 ```c
 /*
@@ -142,7 +142,7 @@ Puts a string on the location (x,y) in the given window.
 
 ```c
 /*
-** Put a string in the window
+** Put a string in the window.
 **
 ** @param  void *mlx_ptr the mlx instance;
 ** @param  int  x        the x location;
@@ -189,18 +189,18 @@ as follows:
 int pos = (y * size_line + x * (bits_per_pixel / 8));
 ```
 
-Here we multiply size_line by `y` 5 as we need to skip 5 lines (and yes,
-line size does not equal the amount of pixels in a line). We then multiply this
-by the amount of bytes each pixel takes up.  We then add the remaining `x` units
-multiplied by the amount of bytes to align with the final location.
+Here we multiply size_line by `y` as we need to skip `y` lines (and yes,
+line size does not equal the amount of pixels in a line). We then add th
+remaining `x` units multiplied by `bits_per_pixl / 8` to align with the final
+location.
 
 To modify each pixel accordingly with the correct color, we need to do some more
 fancy stuff. As we need to align the bits accordingly before writing, we need to
 do the following for the best result:
 
 ```c
-char *mlx_data_addr;
-*(unsigned int *)(mlx_data_addr) = color;
+char *mlx_data_addr = mlx_get_data_addr();
+*(unsigned int *)mlx_data_addr = color;
 ```
 
 The function prototype is as follows:
@@ -222,7 +222,7 @@ char    *mlx_get_data_addr(void *img_ptr, int *bits_per_pixel, int *size_line, i
 
 Puts an image to the given window instance at location (x,y). This is the
 recommended way to write large amounts of graphical data in one go. Do mind that
-when changing the memory of the locations, it will displayed directly on the
+when changing the memory of the locations, it will be displayed directly on the
 window.
 
 ```c
@@ -256,14 +256,14 @@ int     mlx_destroy_image(void *mlx_ptr, void *img_ptr);
 ## Hooks
 
 These functions will allow you to hook into the minilibx functions. This is core
-functionality and is required to use the library. Please look at code hooking if
-you have no clue what this concept means.
+functionality and is required to use the library effectively. Please look at the
+[Hooks](./hooks.html) chapter if you have no clue what this means.
 
 ### mlx_mouse_hook
 
 Hook into mouse events. This will trigger every time you click somewhere in the
 given screen. Do mind that currently these mouse events barely work, it is
-therefore suggested to use them.
+therefore suggested to not use them.
 
 ```c
 /*
@@ -318,7 +318,7 @@ int     mlx_loop_hook (void *mlx_ptr, int (*f)(), void *param);
 
 ### mlx_loop
 
-Loop over the given mlx pointer. Each hook that has be registered prior to this
+Loop over the given mlx pointer. Each hook that was registered prior to this
 will be called accordingly by order of registration.
 
 ```c
@@ -337,14 +337,14 @@ These are functions that are useful for loading sprites or even saving images.
 
 ### mlx_xpm_to_image
 
-Converts xmp data to a new image instance.
+Converts xpm data to a new image instance.
 
 ```c
 /*
-** Converts xmp data to a new image instance.
+** Converts xpm data to a new image instance.
 **
 ** @param  void *mlx_ptr   the mlx instance;
-** @param  char **xmp_data the xmp data in a 2 dimensional char array;
+** @param  char **xpm_data the xpm data in a 2 dimensional char array;
 ** @param  int  *width     a pointer to where the width ought to be written;
 ** @param  int  *height    a pointer to where the height ought to be written;
 ** @return void *          the image instance.
@@ -354,11 +354,11 @@ void    *mlx_xpm_to_image(void *mlx_ptr, char **xpm_data, int *width, int *heigh
 
 ### mlx_xpm_file_to_image
 
-Converts an xmp file to a new image instance.
+Converts an xpm file to a new image instance.
 
 ```c
 /*
-** Converts a xmp file to a new image instance.
+** Converts a xpm file to a new image instance.
 **
 ** @param  void *mlx_ptr   the mlx instance;
 ** @param  char *filename  the file to load;
