@@ -50,12 +50,12 @@ fact that you are not creating a window yet, so lets try initializing a tiny
 window which will close itself after a few seconds. To achieve this, we will
 simply call the `mlx_new_window` function, which will return a pointer to the
 window we have just created. We can give the window a height, width and a
-title. Here we will create a window with a width of 1920, a height of 1080 and
-a name of "Hello world!":
+title. We then will have to call `mlx_loop` to initiate the window rendering.
+Let's create a window with a width of 1920, a height of 1080 and a name of
+"Hello world!":
 
 ```c
 #include <mlx.h>
-#include <unistd.h> // for sleep
 
 int     main(void)
 {
@@ -64,8 +64,7 @@ int     main(void)
 
     mlx = mlx_init();
     mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-    sleep(5);
-    mlx_destroy_window(mlx, mlx_win);
+    mlx_loop(mlx);
 }       
 ```
 
@@ -121,6 +120,12 @@ int     main(void)
 
     mlx = mlx_init();
     img = mlx_new_image(mlx, 1920, 1080);
+
+    /*
+    ** After creating an image, we can call `mlx_get_data_addr`, we pass
+    ** `bits_per_pixel`, `line_length`, and `endian` by reference. These will
+    ** then be set accordingly for the *current* data address.
+    */
     addr = mlx_get_data_addr(img, &bits_per_pixel, &line_length, &endian);
 }
 ```
@@ -136,11 +141,12 @@ calculate the memory offset using the line length set by `mlx_get_data_addr`.
 We can calculate it very easily by using the following formula:
 
 ```c
-int     offset = ((y * line_length + x * (bits_per_pixel / 8));
+int     offset = (y * line_length + x * (bits_per_pixel / 8));
 ```
 
 Now that we know where to write, it becomes very easy to write a function that
-will mimic the behaviour of `mlx_pixel_put`:
+will mimic the behaviour of `mlx_pixel_put` but will simply be many times
+faster:
 
 ```c
 typedef struct  s_data {
@@ -155,10 +161,16 @@ void            my_mlx_pixel_put(t_data data, int x, int y, int color)
 {
     char    *dst;
 
-    dst = data.addr + ((y * data.line_length + x * (data.bits_per_pixel / 8));
-    *(unsigned int*)dst = *(unsigned int*)color;
+    dst = data.addr + (y * data.line_length + x * (data.bits_per_pixel / 8));
+    *(unsigned int*)dst = color;
 }
 ```
+
+Notice that this will cause an issue. As an image is represented in real time in
+a window, changing the same image will cause a bunch of screen-tearing when
+writing to it. You should therefore create two or more images to hold your
+frames temporarily. You can then write to a temporary image, so that you don't
+write to the currently presented image.
 
 ## Pushing images to a window
 
@@ -181,7 +193,7 @@ int             main(void)
 {
     void    *mlx;
     void    *mlx_win;
-    t_data  *img;
+    t_data  img;
 
     mlx = mlx_init();
     mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
@@ -190,8 +202,11 @@ int             main(void)
                                  &img.endian);
     my_mlx_pixel_put(data, 5, 5, 0x00FF0000);
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+    mlx_loop(env);
 }
 ```
+
+Note that 0x00FF0000 is the hex representation of ARGB(0,255,0,0)
 
 ## Test your skills!
 
