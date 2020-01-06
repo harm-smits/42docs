@@ -24,14 +24,39 @@ understanding of how to write performant code using this library. For a lot of
 projects, performance is of the essence, it is therefore of utmost importance
 that you read through this section thoroughly.
 
+## Compilation
+
+Because MiniLibX requires Appkit and X11 we need to link them accordingly. This
+can cause a complicated compilation process. A basic compilation process looks
+as follows:
+
+For object files, you could add the following rule to your makefile, assuming
+that you have the `mlx` source in a directory named `mlx` in the root of your
+project:
+
+```Makefile
+%.o: %.c
+	@printf "Compiling $<"
+	@gcc -Wall -Wextra -Werror -Imlx -Iinc -Ilibft -c $< -o $@
+```
+
+To link with the required internal MacOS API's:
+
+```Makefile
+$(NAME): $(OBJ)
+    $(CC) -Lmlx/ -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+```
+
+Do mind that you need the `libmlx.dylib` in the same directory as your build
+target as it is a dynamic library!
+
 ## Initialization
 
-Before we can do anything with the MiniLibX
-library we must include the `<mlx.h>` header to access all the functions and
-we should execute the `mlx_init` function. This will establish a connection
-to the correct graphical system and will return a `void *` which holds the
-location of our current MLX instance. To initialize MiniLibX one could do the
-following:
+Before we can do anything with the MiniLibX library we must include the
+`<mlx.h>` header to access all the functions and we should execute the
+`mlx_init` function. This will establish a connection to the correct graphical
+system and will return a `void *` which holds the location of our current MLX
+instance. To initialize MiniLibX one could do the following:
 
 ```c
 #include <mlx.h>
