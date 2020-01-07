@@ -47,7 +47,7 @@ This will ofcourse do nothing as we have no loop hook registered, we therefore
 will not be able to write anything to our frame.
 
 To do this, you will have to create a new window and use the mutations that we
-described in the [getting started](./getting_started.html) chapter. We assume
+described in the [Getting Started](./getting_started.html) chapter. We assume
 that your knowledge of that is proficient and that you will be able to pass
 your parameters accordingly. An example whiteboarded version of it could look
 as follows:
