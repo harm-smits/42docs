@@ -231,7 +231,7 @@ int             main(void)
                                  &img.endian);
     my_mlx_pixel_put(&img, 5, 5, 0x00FF0000);
     mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
-    mlx_loop(env);
+    mlx_loop(mlx);
 }
 ```
 
