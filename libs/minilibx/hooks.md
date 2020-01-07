@@ -57,7 +57,7 @@ int             main(void)
     t_vars      vars;
 
     vars.mlx = mlx_init();
-    vars.win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
+    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
     mlx_key_hook(vars.win, close, &vars);
     mlx_loop(vars.mlx);
 } 
