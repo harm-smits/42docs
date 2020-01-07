@@ -124,7 +124,7 @@ typedef struct  s_vars {
 
 int             close(int keycode, t_vars *vars)
 {
-    mlx_destroy_window(vars->mlx, vars->mlx_win);
+    mlx_destroy_window(vars->mlx, vars->win);
 }
 
 int             main(void)
@@ -132,8 +132,8 @@ int             main(void)
     t_vars    vars;
 
     vars.mlx = mlx_init();
-    vars.mlx_win = mlx_new_window(mlx, 1920, 1080, "Hello world!");
-    mlx_hook(vars.mlx_win, 2, 1L<<0, close, &vars);
+    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
+    mlx_hook(vars.win, 2, 1L<<0, close, &vars);
 } 
 ```
 
