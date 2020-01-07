@@ -6,6 +6,11 @@ heading_anchors: true
 color_scheme: dark
 ga_tracking: UA-154240025-1
 
+# Aux links for the upper right navigation
+aux_links:
+  "42docs on GitHub":
+    - "//github.com/harm-smits/42docs"
+
 remote_theme: pmarsceill/just-the-docs
 plugins:
   - jekyll-remote-theme
