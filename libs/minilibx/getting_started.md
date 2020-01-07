@@ -34,7 +34,7 @@ For object files, you could add the following rule to your makefile, assuming
 that you have the `mlx` source in a directory named `mlx` in the root of your
 project:
 
-```Makefile
+```
 %.o: %.c
 	@printf "Compiling $<"
 	@gcc -Wall -Wextra -Werror -Imlx -Iinc -Ilibft -c $< -o $@
@@ -42,7 +42,7 @@ project:
 
 To link with the required internal MacOS API's:
 
-```Makefile
+```
 $(NAME): $(OBJ)
     $(CC) -Lmlx/ -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 ```
