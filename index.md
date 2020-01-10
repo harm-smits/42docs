@@ -38,3 +38,8 @@ P.S. feel free to give me a star ;)
 ## Current libraries
 
 - [MiniLibX](./libs/minilibx.html)
+
+## Project guides
+
+- [ft_server](./projects/ft_server.html)
+- [libasm](./projects/libasm.html)
