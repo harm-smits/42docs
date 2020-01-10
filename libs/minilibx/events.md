@@ -2,6 +2,7 @@
 layout: default
 title: Events
 parent: MiniLibX
+grand_parent: Libs
 nav_order: 5
 ---
 

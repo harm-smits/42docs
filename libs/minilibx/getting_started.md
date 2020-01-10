@@ -2,6 +2,7 @@
 layout: default
 title: Getting started
 parent: MiniLibX
+grand_parent: Libs
 nav_order: 3
 ---
 

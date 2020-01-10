@@ -2,6 +2,7 @@
 layout: default
 title: Prototypes
 parent: MiniLibX
+grand_parent: Libs
 nav_order: 9
 ---
 
