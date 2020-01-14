@@ -47,7 +47,7 @@ extensions installed.
 download a database, create users, remove users, update tables, etc.
 - Make sure you have the CORRECT file permissions across your system. This is
 INSANELY important as it is the only thing that can guarantee that your docker
-container will not become the victem of e.g. remote code execution.
+container will not become the victim of e.g. remote code execution.
 
 ## Getting started
 
