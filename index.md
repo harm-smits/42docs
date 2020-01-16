@@ -41,5 +41,6 @@ P.S. feel free to give me a star ;)
 
 ## Project guides
 
+- [cub3d](./projects/cub3d.html)
 - [ft_server](./projects/ft_server.html)
 - [libasm](./projects/libasm.html)
