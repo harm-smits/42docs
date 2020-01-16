@@ -1,12 +1,12 @@
 ---
 layout: default
 nav_order: 3
-title: LibASM
+title: libasm
 permalink: projects/libasm
 parent: Projects
 has_children: false
 ---
-# LibASM
+# libasm
 
 Assembly is a more visual way of coding direct processor instructions. It should
 therefore be noted that it is very important to read proper documentation on
