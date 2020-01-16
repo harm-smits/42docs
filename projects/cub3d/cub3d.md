@@ -6,7 +6,8 @@ permalink: projects/cub3d
 parent: Projects
 has_children: false
 ---
-# Cub3d
+
+# cub3d
 
 This will be the first time you will be rendering something in 3D. For a lot of
 people this is hard to grasp, and that is completely fine. There are a nubmer
