@@ -68,7 +68,7 @@ int     main(void)
 }
 ```
 
-Now for each frame it requires, it will call the function `render_next_frame``
+Now for each frame it requires, it will call the function `render_next_frame`
 with the parameter `YourStruct`. This will persist through multiple calls if it
 is a pointer, so use that to your advantage!
 
