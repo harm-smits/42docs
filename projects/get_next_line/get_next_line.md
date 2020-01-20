@@ -7,6 +7,8 @@ parent: Projects
 has_children: false
 ---
 
+# get_next_line
+
 Write a function that will store, in the parameter "line", a line that has been read from the given file descriptor.
 
 Your function must be prototyped as follows: `int get_next_line(int fd, char **line);`
