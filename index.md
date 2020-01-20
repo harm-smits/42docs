@@ -43,4 +43,5 @@ P.S. feel free to give me a star ;)
 
 - [cub3d](./projects/cub3d.html)
 - [ft_server](./projects/ft_server.html)
+- [get_next_line](./projects/get_next_line.html)
 - [libasm](./projects/libasm.html)
