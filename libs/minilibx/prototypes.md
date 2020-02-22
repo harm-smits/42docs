@@ -3,7 +3,7 @@ layout: default
 title: Prototypes
 parent: MiniLibX
 grand_parent: Libs
-nav_order: 9
+nav_order: 10
 ---
 
 # Prototypes
@@ -487,4 +487,26 @@ int     mlx_do_key_autorepeaton(void *mlx_ptr);
 
 ### mlx_do_sync
 
-Has no defined behaviour.
+```c
+/*
+** Synchronize frames of all windows in MLX.
+**
+** @param  void *mlx_ptr the mlx instance;
+** @return int           has no return value (bc).
+*/
+int		mlx_do_sync(void *mlx_ptr);
+```
+
+### mlx_get_screen_size
+
+```c
+/*
+** Get the current screen size (because MacOS is sheit)
+**
+** @param  void *mlx_ptr the mlx instance;
+** @param  int  *sizex   the screen width;
+** @param  int  *sizey   the screen height
+** @return int           has no return value (bc).
+*/
+int	mlx_get_screen_size(void *mlx_ptr, int *sizex, int *sizey);
+```
