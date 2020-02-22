@@ -49,4 +49,5 @@ will have to flush the window in which the image is present, using
 ## Test your skills!
 
 Now that you have a faint idea of what MLX sync can do, grab your previous tiny
-circle-game that you made in [./loops.html] and add MLX sync to your rendering!
+circle-game that you made in [loops](./loops.html) and add MLX sync to your
+rendering!
