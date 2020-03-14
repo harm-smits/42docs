@@ -46,7 +46,7 @@ extensions installed.
 - PHPMyAdmin should work in its entirty, so make sure you can create a database,
 download a database, create users, remove users, update tables, etc.
 - Make sure you have the CORRECT file permissions across your system. This is
-INSANELY important as it is the only thing that can guarantee that your docker
+INSANELY important as it is the main thing that can guarantee that your docker
 container will not become the victim of e.g. remote code execution.
 
 ## Getting started

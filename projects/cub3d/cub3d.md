@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 3
+nav_order: 2
 title: cub3d
 permalink: projects/cub3d
 parent: Projects

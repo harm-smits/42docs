@@ -1,6 +1,6 @@
 ---
 layout: default
-nav_order: 3
+nav_order: 1
 title: get_next_line
 permalink: projects/get_next_line
 parent: Projects
