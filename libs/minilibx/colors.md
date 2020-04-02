@@ -61,17 +61,17 @@ int		get_t(int trgb)
 
 int		get_r(int trgb)
 {
-	return (trgb & 0xFF00);
+	return ((trgb >> 8) & 0xFF);
 }
 
 int		get_g(int trgb)
 {
-	return (trgb & 0xFF0000);
+	return ((trgb >> 16) & 0xFF);
 }
 
 int		get_b(int trgb)
 {
-	return (trgb & 0xFF000000);
+	return ((trgb >> 24) & 0xFF);
 }
 ```
 
