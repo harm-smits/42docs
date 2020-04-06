@@ -35,14 +35,14 @@ For object files, you could add the following rule to your makefile, assuming
 that you have the `mlx` source in a directory named `mlx` in the root of your
 project:
 
-```
+```makefile
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+    $(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 ```
 
 To link with the required internal MacOS API's:
 
-```
+```makefile
 $(NAME): $(OBJ)
     $(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 ```
@@ -58,25 +58,27 @@ function calls. Do mind, that using memory magic on images can differ as object
 implementations are architecture specific. Next, you should unzip the MLX
 for linux in a new folder, in the root of your project, called `mlx_linux`.
 
-MiniLibX for Linux requires XOrg, X11 and zlib, therefore you will need to
+MiniLibX for Linux requires `xorg`, `x11` and `zlib`, therefore you will need to
 install the following dependencies: `xorg`, `libxext-dev` and `zlib1g-dev`.
-Installing these dependencies on ubuntu can be done as follows:
-`sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev`. Now
-all thats left is to configure MLX, just run the `configure` script in the
+Installing these dependencies on Ubuntu can be done as follows:
+```sh
+sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
+```
+Now all thats left is to configure MLX, just run the `configure` script in the
 root of the given repository, and you are good to go.
 
 For object files, you could add the following rule to your makefile, assuming
 that you have the `mlx` for linux source in a directory named `mlx_linux` in the
 root of your project:
 
-```
+```makefile
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+    $(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
 ```
 
 To link with the required internal Linux API's:
 
-```
+```makefile
 $(NAME): $(OBJ)
     $(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 ```
@@ -84,22 +86,21 @@ $(NAME): $(OBJ)
 ## Getting a screen on WSL(2)
 
 If you want to get a screen on WSL, follow the following steps:
-1. Install [xming](https://sourceforge.net/projects/xming/), just keep clicking
+1. Install [Xming](https://sourceforge.net/projects/xming/), just keep clicking
 next, the defaults will do. After installing, you will see a little Xming icon
-in your icon tray. Now exit xming, and open `XLaunch`, now click the following
-in setup:
+in your icon tray. Now exit xming, and open XLaunch, proceed with the following
+steps:
 	- Click multiple windows and go to the next page
 	- Click start a program and go to the next page
 	- Make sure that the `No Access Control` box is ticked and go to the next page
 	- Click save configuration and then finish
-2. In WSL execute the following shell script, this will set your display
-environment variable accordingly (feel free to create an alias :D):
+2. In WSL execute the following command, this will set your display environment
+variable accordingly (feel free to create an alias :D):
 ```sh
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 ```
 3. Now you can run graphical applications by calling them from your command line
 interface.
-
 
 ## Initialization
 
