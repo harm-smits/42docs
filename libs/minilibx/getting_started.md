@@ -25,7 +25,7 @@ understanding of how to write performant code using this library. For a lot of
 projects, performance is of the essence, it is therefore of utmost importance
 that you read through this section thoroughly.
 
-## Compilation
+## Compilation on MacOS
 
 Because MiniLibX requires Appkit and X11 we need to link them accordingly. This
 can cause a complicated compilation process. A basic compilation process looks
@@ -37,19 +37,69 @@ project:
 
 ```
 %.o: %.c
-	@printf "Compiling $<"
-	@gcc -Wall -Wextra -Werror -Imlx -Iinc -Ilibft -c $< -o $@
+	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 ```
 
 To link with the required internal MacOS API's:
 
 ```
 $(NAME): $(OBJ)
-    $(CC) -Lmlx/ -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+    $(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 ```
 
 Do mind that you need the `libmlx.dylib` in the same directory as your build
 target as it is a dynamic library!
+
+## Compilation on Linux
+
+In case of Linux, you can use the Codam provided zip which is a linux
+compatible MLX version. It has the exact same functions and shares the same
+function calls. Do mind, that using memory magic on images can differ as object
+implementations are architecture specific. Next, you should unzip the MLX
+for linux in a new folder, in the root of your project, called `mlx_linux`.
+
+MiniLibX for Linux requires XOrg, X11 and zlib, therefore you will need to
+install the following dependencies: `xorg`, `libxext-dev` and `zlib1g-dev`.
+Installing these dependencies on ubuntu can be done as follows:
+`sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev`. Now
+all thats left is to configure MLX, just run the `configure` script in the
+root of the given repository, and you are good to go.
+
+For object files, you could add the following rule to your makefile, assuming
+that you have the `mlx` for linux source in a directory named `mlx_linux` in the
+root of your project:
+
+```
+%.o: %.c
+	$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
+```
+
+To link with the required internal Linux API's:
+
+```
+$(NAME): $(OBJ)
+    $(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+```
+
+## Getting a screen on WSL(2)
+
+If you want to get a screen on WSL, follow the following steps:
+1. Install [xming](https://sourceforge.net/projects/xming/), just keep clicking
+next, the defaults will do. After installing, you will see a little Xming icon
+in your icon tray. Now exit xming, and open `XLaunch`, now click the following
+in setup:
+	- Click multiple windows and go to the next page
+	- Click start a program and go to the next page
+	- Make sure that the `No Access Control` box is ticked and go to the next page
+	- Click save configuration and then finish
+2. In WSL execute the following shell script, this will set your display
+environment variable accordingly (feel free to create an alias :D):
+```sh
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
+```
+3. Now you can run graphical applications by calling them from your command line
+interface.
+
 
 ## Initialization
 
