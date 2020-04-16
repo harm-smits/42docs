@@ -100,7 +100,12 @@ variable accordingly (feel free to create an alias :D):
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0.0
 ```
 3. Now you can run graphical applications by calling them from your command line
-interface.
+interface. If you get the error `Error: Can't open display`, you most likely
+have WSL1 installed (instead of WSL2), to fix this run the following command to
+get a display:
+```sh
+export DISPLAY=localhost:0.0
+```
 
 ## Initialization
 
