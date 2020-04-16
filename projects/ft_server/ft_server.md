@@ -29,6 +29,10 @@ updates. Because of this sole reason, they can more easily add servers and
 deploy their software to them, as it just needs to download a tiny image and run
 it, after which it will work accordingly.
 
+## A very thorough video
+
+[![Image splashscreen](https://img.youtube.com/vi/eGz9DS-aIeY/0.jpg)](https://www.youtube.com/watch?v=eGz9DS-aIeY)
+
 ## Prerequisites
 
 Now that you know the usecase for Docker, you must start your project. There are
