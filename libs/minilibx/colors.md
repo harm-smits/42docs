@@ -56,22 +56,22 @@ retrieve integer values from a encoded TRGB integer.
 ```c
 int		get_t(int trgb)
 {
-	return (trgb & 0xFF);
+	return (trgb & (0xFF << 24));
 }
 
 int		get_r(int trgb)
 {
-	return ((trgb >> 8) & 0xFF);
+	return (trgb & (0xFF << 16));
 }
 
 int		get_g(int trgb)
 {
-	return ((trgb >> 16) & 0xFF);
+	return (trgb & (0xFF << 8));
 }
 
 int		get_b(int trgb)
 {
-	return ((trgb >> 24) & 0xFF);
+	return (trgb & 0xFF);
 }
 ```
 
