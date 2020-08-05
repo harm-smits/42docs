@@ -386,7 +386,7 @@ Converts a png file to a new image instance. Not implemented for [minilibx-linux
 **                         instead;
 ** @return void *          the image instance.
 */
-void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
+void    *mlx_png_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
 ```
 
 ## Mouse functions
