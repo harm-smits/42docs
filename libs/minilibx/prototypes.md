@@ -370,9 +370,9 @@ Converts an xpm file to a new image instance.
 void    *mlx_xpm_file_to_image(void *mlx_ptr, char *filename, int *width, int *height);
 ```
 
-### mlx_png_file_to_image
+### mlx_png_file_to_image (macOS only)
 
-Converts a png file to a new image instance.
+Converts a png file to a new image instance. Not implemented for [minilibx-linux](https://github.com/42Paris/minilibx-linux)
 
 ```c
 /*
