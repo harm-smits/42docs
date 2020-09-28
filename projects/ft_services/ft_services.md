@@ -7,7 +7,7 @@ parent: Projects
 has_children: false
 ---
 
-# ft_server
+# ft_services
 
 Make a kubernetes cluster that will make sure your wordpress installatio
 conforms to [High Availability](https://en.wikipedia.org/wiki/High_availability)
