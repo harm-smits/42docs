@@ -18,7 +18,7 @@ permalink: /
 
 ---
 
-For me, one of the most time consuming things is trying to find out how to god
+For me, one of the most time consuming things is trying to find out how the god
 damn 42 libraries work. They often come with little to no documentation and most
 of the time only have a baguette version. This makes it a very time consuming
 process before you can actually start using the project. Therefore I am making
