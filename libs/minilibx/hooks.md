@@ -42,15 +42,16 @@ we?
 
 ```c
 #include <mlx.h>
+#include <stdio.h>
 
 typedef struct  s_vars {
     void        *mlx;
     void        *win;
 }               t_vars;
 
-int             close(int keycode, t_vars *vars)
+int             key_hook(int keycode, t_vars *vars)
 {
-    mlx_destroy_window(vars->mlx, vars->win);
+    printf("Hello from key_hook!\n");
 }
 
 int             main(void)
@@ -58,13 +59,13 @@ int             main(void)
     t_vars      vars;
 
     vars.mlx = mlx_init();
-    vars.win = mlx_new_window(vars.mlx, 1920, 1080, "Hello world!");
-    mlx_key_hook(vars.win, close, &vars);
+    vars.win = mlx_new_window(vars.mlx, 640, 480, "Hello world!");
+    mlx_key_hook(vars.win, key_hook, &vars);
     mlx_loop(vars.mlx);
 } 
 ```
 
-We have now registered a function that will close the window whenever we press
+We have now registered a function that will print a message whenever we press
 a key. As you can see, we register a hook function with `mlx_key_hook`, however,
 in the background, it simply calls the function `mlx_hook` with the appropriate
 X11 event types. We will discuss this in the next chapter.
