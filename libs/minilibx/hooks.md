@@ -51,7 +51,7 @@ typedef struct  s_vars {
 
 int             key_hook(int keycode, t_vars *vars)
 {
-	printf("Hello from key_hook!\n");
+    printf("Hello from key_hook!\n");
 }
 
 int             main(void)
