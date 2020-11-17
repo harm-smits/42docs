@@ -10,7 +10,7 @@ has_children: false
 # cub3d
 
 This will be the first time you will be rendering something in 3D. For a lot of
-people this is hard to grasp, and that is completely fine. There are a nubmer
+people this is hard to grasp, and that is completely fine. There are a number
 of documentations available to learn how to raycast. The ones we used
 are from 'lodev':
 
