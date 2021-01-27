@@ -52,7 +52,7 @@ target as it is a dynamic library!
 
 ## Compilation on Linux
 
-In case of Linux, you can use the Codam provided zip which is a linux
+In case of Linux, you can use the [Codam provided zip](https://github.com/42Paris/minilibx-linux) which is a linux
 compatible MLX version. It has the exact same functions and shares the same
 function calls. Do mind, that using memory magic on images can differ as object
 implementations are architecture specific. Next, you should unzip the MLX
