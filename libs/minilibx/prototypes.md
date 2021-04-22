@@ -191,8 +191,8 @@ int pos = (y * size_line + x * (bits_per_pixel / 8));
 ```
 
 Here we multiply size_line by `y` as we need to skip `y` lines (and yes,
-line size does not equal the amount of pixels in a line). We then add th
-remaining `x` units multiplied by `bits_per_pixl / 8` to align with the final
+line size does not equal the amount of pixels in a line). We then add the
+remaining `x` units multiplied by `bits_per_pixel / 8` to align with the final
 location.
 
 To modify each pixel accordingly with the correct color, we need to do some more
