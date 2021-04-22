@@ -83,17 +83,17 @@ $(NAME): $(OBJ)
     $(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 ```
 
-## Getting a screen on WSL(2)
+## Getting a screen on WSL2
 
 If you want to get a screen on WSL, follow the following steps:
 1. Install [Xming](https://sourceforge.net/projects/xming/), just keep clicking
 next, the defaults will do. After installing, you will see a little Xming icon
 in your icon tray. Now exit xming, and open XLaunch, proceed with the following
 steps:
-	- Click multiple windows and go to the next page
-	- Click start a program and go to the next page
+	- Click `Multiple windows` and go to the next page
+	- Click `Start no client` and go to the next page
 	- Make sure that the `No Access Control` box is ticked and go to the next page
-	- Click save configuration and then finish
+	- Click `Save configuration` and then `Finish`
 2. In WSL execute the following command, this will set your display environment
 variable accordingly (feel free to create an alias :D):
 ```sh
@@ -106,6 +106,10 @@ get a display:
 ```sh
 export DISPLAY=localhost:0.0
 ```
+
+## Getting a screen on WSLg
+
+For now, no known steps to take. To read more about WSLg, [click here](https://www.zdnet.com/article/new-windows-10-test-build-adds-first-preview-of-linux-gui-apps-on-wsl/)
 
 ## Initialization
 
