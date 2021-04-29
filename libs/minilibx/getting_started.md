@@ -133,11 +133,12 @@ int	main(void)
 When you run the code, you can't help but notice that nothing pops up and that
 nothing is being rendered. Well, this obviously has something to do with the
 fact that you are not creating a window yet, so let's try initializing a tiny
-window which will stay open forever. You can close it by pressing <kbd>CTRL</kbd> + <kbd>C</kbd>
-in your terminal. To achieve this, we will simply call the `mlx_new_window` function, which will return a pointer to the window we have just created.
-We can give the window height, width and a title. We then will have to call
-`mlx_loop` to initiate the window rendering. Let's create a window with a width
-of 1920, a height of 1080 and a name of "Hello world!":
+window which will stay open forever. You can close it by pressing
+<kbd>CTRL</kbd> + <kbd>C</kbd> in your terminal. To achieve this, we will simply
+call the `mlx_new_window` function, which will return a pointer to the window we
+have just created. We can give the window height, width and a title. We then
+will have to call `mlx_loop` to initiate the window rendering. Let's create a
+window with a width of 1920, a height of 1080 and a name of "Hello world!":
 
 ```c
 #include <mlx.h>

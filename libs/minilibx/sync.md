@@ -48,6 +48,6 @@ will have to flush the window in which the image is present, using
 
 ## Test your skills!
 
-Now that you have a faint idea of what `mlx_sync` can do, grab your previous tiny
-circle-game that you made in [loops](./loops.html) and add `mlx_sync` to your
-rendering!
+Now that you have a faint idea of what `mlx_sync` can do, grab your previous
+tiny circle-game that you made in [loops](./loops.html) and add `mlx_sync` to
+your rendering!

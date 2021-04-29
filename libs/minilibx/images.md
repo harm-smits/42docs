@@ -26,8 +26,10 @@ object. This is very useful for textures or sprites of course.
 ## Reading images
 
 To read from a file to a image object, you need either the XMP or PNG format. In
-order to read we can call the functions `mlx_xpm_file_to_image` and `mlx_png_file_to_image` accordingly. Do mind that `mlx_png_file_to_image` currently leaks memory.
-Both functions accept exactly the same parameters and their usage is identical.
+order to read we can call the functions `mlx_xpm_file_to_image` and
+`mlx_png_file_to_image` accordingly. Do mind that `mlx_png_file_to_image`
+currently leaks memory. Both functions accept exactly the same parameters and
+their usage is identical.
 
 Now, lets read from an image, shall we?
 
