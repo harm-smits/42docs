@@ -26,7 +26,7 @@ We shift bits to use the TRGB format. To define a color, we initialize it as
 follows: `0xTTRRGGBB`, where each character represents the following:
 
 Letter | Description
-:-----:| -----------
+:-----:|:-----------:
 `T`    | transparency
 `R`    | red component
 `G`    | green component
@@ -35,7 +35,7 @@ Letter | Description
 RGB colors can be initialized as above, a few examples would be:
 
 Color | TRGB representation
------ |:------------------:
+:----:|:-------------------:
 red   | `0x00FF0000`
 green | `0x0000FF00`
 blue  | `0x000000FF`
