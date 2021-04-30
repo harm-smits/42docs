@@ -35,16 +35,16 @@ as only parameter, take a look:
 ```c
 #include <mlx.h>
 
-int     main(void)
+int	main(void)
 {
-    void    *mlx;
+	void	*mlx;
 
-    mlx = mlx_init();
-    mlx_loop(mlx);
+	mlx = mlx_init();
+	mlx_loop(mlx);
 }
 ```
 
-This will ofcourse do nothing as we have no loop hook registered, we therefore
+This will do nothing of course as we have no loop hook registered, therefore we
 will not be able to write anything to our frame.
 
 To do this, you will have to create a new window and use the mutations that we
@@ -56,15 +56,15 @@ as follows:
 ```c
 #include <mlx.h>
 
-int     render_next_frame(void *YourStruct);
+int	render_next_frame(void *YourStruct);
 
-int     main(void)
+int	main(void)
 {
-    void    *mlx;
+	void	*mlx;
 
-    mlx = mlx_init();
-    mlx_loop_hook(mlx, render_next_frame, YourStruct);
-    mlx_loop(mlx);
+	mlx = mlx_init();
+	mlx_loop_hook(mlx, render_next_frame, YourStruct);
+	mlx_loop(mlx);
 }
 ```
 

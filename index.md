@@ -25,7 +25,7 @@ process before you can actually start using the project. Therefore I am making
 this pity attempt at trying to change that culture.
 
 Whilst I am traversing the curriculum, I will document any libraries or projects
-that I find worth mentioning. These I will all add to this github page. This way
+that I find worth mentioning. These I will all add to this GitHub page. This way
 no one will have to suffer like how I did.
 
 If you find anything that you think other people can benefit from in terms of

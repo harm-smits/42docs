@@ -26,12 +26,12 @@ tool, half-ass image functions and a weird event management system.
 
 ## About X-Window
 
-X-Window is a network-oriented graphical system for unix. This is e.g. used when
-connecting to remote desktops. One of the most common examples of such
+X-Window is a network-oriented graphical system for unix. For example this is
+used when connecting to remote desktops. One of the most common examples of such
 implementation would be TeamViewer.
 
-## About MacOS
+## About macOS
 
-MacOS handles the graphical access to its screen, however to access this, we
-must register our application to the underlying MacOS graphical framework that
+macOS handles the graphical access to its screen, however to access this, we
+must register our application to the underlying macOS graphical framework that
 handles the screen, windowing system, keyboard and mouse.
