@@ -44,7 +44,7 @@ To link with the required internal macOS API:
 
 ```makefile
 $(NAME): $(OBJ)
-	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) -Lmlx -lmlx -framework OpenGL -framework AppKit $(OBJ) -o $(NAME)
 ```
 
 Do mind that you need the `libmlx.dylib` in the same directory as your build
@@ -80,8 +80,9 @@ To link with the required internal Linux API:
 
 ```makefile
 $(NAME): $(OBJ)
-	$(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz $(OBJ) -o $(NAME)
 ```
+
 
 ## Getting a screen on WSL2
 
