@@ -83,7 +83,6 @@ $(NAME): $(OBJ)
 	$(CC) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz $(OBJ) -o $(NAME)
 ```
 
-
 ## Getting a screen on WSL2
 
 If you want to get a screen on WSL, follow these steps:
