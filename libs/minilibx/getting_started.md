@@ -25,7 +25,9 @@ understanding of how to write performant code using this library. For a lot of
 projects, performance is the essence. It is therefore of utmost importance
 that you read through this section thoroughly.
 
-## Compilation on macOS
+## Installation
+
+### Compilation on macOS
 
 Because MiniLibX requires AppKit and X11 we need to link them accordingly. This
 can cause a complicated compilation process. A basic compilation process looks
@@ -50,7 +52,7 @@ $(NAME): $(OBJ)
 Do mind that you need the `libmlx.dylib` in the same directory as your build
 target as it is a dynamic library!
 
-## Compilation on Linux
+### Compilation on Linux
 
 In case of Linux, you can use the [Codam provided zip](https://github.com/42Paris/minilibx-linux) which is a Linux
 compatible MLX version. It has the exact same functions and shares the same
@@ -83,7 +85,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 ```
 
-## Getting a screen on WSL2
+### Getting a screen on WSL2
 
 If you want to get a screen on WSL, follow these steps:
 1. Install [Xming](https://sourceforge.net/projects/xming/), just keep clicking
@@ -107,7 +109,7 @@ get a display:
 export DISPLAY=localhost:0.0
 ```
 
-## Getting a screen on WSLg
+### Getting a screen on WSLg
 
 For now, no known steps to take. To read more about WSLg, [click here](https://www.zdnet.com/article/new-windows-10-test-build-adds-first-preview-of-linux-gui-apps-on-wsl/)
 
