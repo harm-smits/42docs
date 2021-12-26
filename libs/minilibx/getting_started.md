@@ -29,7 +29,7 @@ that you read through this section thoroughly.
 
 ### Compilation on macOS
 
-Because MiniLibX requires Cocoa of MaccOSX (AppKit) and OpenGL (it doesn't
+Because MiniLibX requires Cocoa of MacOSX (AppKit) and OpenGL (it doesn't
 use X11 anymore) we need to link them accordingly. This can cause a complicated
 compilation process. A basic compilation process looks as follows.
 
