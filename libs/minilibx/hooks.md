@@ -71,40 +71,19 @@ X11 event types. We will discuss this in the next chapter.
 
 ## Hooking into mouse events
 
+<img align="right" src="res/mouse-schema.png">
+
 Also, you can hook mouse events.
 
 ```c
 mlx_mouse_hook(vars.win, mouse_hook, &vars);
 ```
-
-<details>
-  <summary>Mouse buttons</summary>
-
-<table>
-<tr>
-<th align="center">Schema</th>
-<th align="center">Buttons</th>
-</tr>
-<tr>
-<td>
-
-![Mouse buttons](res/mouse-schema.png)
-
-</td>
-<td>
-
+Mouse code for MacOS:
   - Left click: 1
   - Right click: 2
   - Middle click: 3
   - Scroll up: 4
   - Scroll down : 5  
-
-</td>
-</tr>
-</table>
-  
-</details>
-
 
 
 ## Test your skills!
