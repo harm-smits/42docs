@@ -29,9 +29,9 @@ that you read through this section thoroughly.
 
 ### Compilation on macOS
 
-Because MiniLibX requires AppKit and X11 we need to link them accordingly. This
-can cause a complicated compilation process. A basic compilation process looks
-as follows:
+Because MiniLibX requires Cocoa of MacOSX (AppKit) and OpenGL (it doesn't
+use X11 anymore) we need to link them accordingly. This can cause a complicated
+compilation process. A basic compilation process looks as follows.
 
 For object files, you could add the following rule to your makefile, assuming
 that you have the `mlx` source in a directory named `mlx` in the root of your
