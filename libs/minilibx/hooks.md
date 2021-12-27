@@ -69,6 +69,23 @@ a key. As you can see, we register a hook function with `mlx_key_hook`. However
 in the background it simply calls the function `mlx_hook` with the appropriate
 X11 event types. We will discuss this in the next chapter.
 
+## Hooking into mouse events
+
+<img align="right" src="res/mouse-schema.png">
+
+Also, you can hook mouse events.
+
+```c
+mlx_mouse_hook(vars.win, mouse_hook, &vars);
+```
+Mouse code for MacOS:
+  - Left click: 1
+  - Right click: 2
+  - Middle click: 3
+  - Scroll up: 4
+  - Scroll down : 5  
+
+
 ## Test your skills!
 
 Now that you have a faint idea of what hooks are, we will allow you to create a
