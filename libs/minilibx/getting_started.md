@@ -85,7 +85,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) -Lmlx_linux -lmlx_linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 ```
 
-### Getting a screen on Windows 10 + WSL2
+### Getting a screen on Windows 10 (WSL2)
 
 Getting a screen on WSL2 with Windows 10 can be quite hard. I suggest you either
 use Windows 11 (as it has graphics support built-in) or use a VM.
@@ -156,10 +156,13 @@ export DISPLAY=172.27.32.1:0.0
 
 If none of that worked, feel free to send me a message on slack (@hsmits).
 
-### Getting a screen on Windows 11
+### Getting a screen on Windows 11 (WSLg)
 
-Windows 11's WSL comes with WSLg by default, meaning you don't need to use
-VNC (XMing) to get a display. To read more about WSLg, [click here](https://www.zdnet.com/article/new-windows-10-test-build-adds-first-preview-of-linux-gui-apps-on-wsl/)
+Windows 11's WSL comes with an option to run graphic applications directly. To enable
+this, follow their official guide for [running linux gui apps in wsl](https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps).
+When you have finished the installation, you can simply compile and run minilibx
+apps and they will appear like an actual application as if they were executed
+in windows.
 
 ## Initialization
 
