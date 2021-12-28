@@ -33,8 +33,7 @@ Note: On MacOS - Cocoa (AppKit) and OpenGL - version, minilibx has partial suppo
 of X11 events and doesn't support X11 mask (x_mask argument of mlx_hook is useless,
 keep it at 0).
 
-<details>
-  <summary>See: Supported events</summary>
+Supported events:
   
 ```c
 enum {
@@ -50,8 +49,6 @@ enum {
 // usage:
 mlx_hook(vars.win, ON_DESTROY, 0, close, &vars);
 ```
-  
-</details>
 
 ## X11 interface
 
@@ -63,48 +60,21 @@ MiniLibX.
 
 There are a number of events to which you may describe.
 
-<details>
-  <summary>See: List of X11 events</summary>
+| Key  | Event         | | Key  | Event            | | Key  | Event            |
+| :--: | ------------- |-| :--: | ---------------- |-| :--: | ---------------- |
+| `02` | KeyPress      | | `14` | NoExpose         | | `26` | CirculateNotify  | 
+| `03` | KeyRelease    | | `15` | VisibilityNotify | | `27` | CirculateRequest | 
+| `04` | ButtonPress   | | `16` | CreateNotify     | | `28` | PropertyNotify   |
+| `05` | ButtonRelease | | `17` | DestroyNotify    | | `29` | SelectionClear   |
+| `06` | MotionNotify  | | `18` | UnmapNotify      | | `30` | SelectionRequest |
+| `07` | EnterNotify   | | `19` | MapNotify        | | `31` | SelectionNotify  |
+| `08` | LeaveNotify   | | `20` | MapRequest       | | `32` | ColormapNotify   |
+| `09` | FocusIn       | | `21` | ReparentNotify   | | `33` | ClientMessage    |
+| `10` | FocusOut      | | `22` | ConfigureNotify  | | `34` | MappingNotify    |
+| `11` | KeymapNotify  | | `23` | ConfigureRequest | | `35` | GenericEvent     |
+| `12` | Expose        | | `24` | GravityNotify    | | `36` | LASTEvent        |
+| `13` | GraphicsExpose| | `25` | ResizeRequest    | |      |                  |
 
-Key  | Event
-:---:| -----
-`02` | KeyPress
-`03` | KeyRelease
-`04` | ButtonPress
-`05` | ButtonRelease
-`06` | MotionNotify
-`07` | EnterNotify
-`08` | LeaveNotify
-`09` | FocusIn
-`10` | FocusOut
-`11` | KeymapNotify
-`12` | Expose
-`13` | GraphicsExpose
-`14` | NoExpose
-`15` | VisibilityNotify
-`16` | CreateNotify
-`17` | DestroyNotify
-`18` | UnmapNotify
-`19` | MapNotify
-`20` | MapRequest
-`21` | ReparentNotify
-`22` | ConfigureNotify
-`23` | ConfigureRequest
-`24` | GravityNotify
-`25` | ResizeRequest
-`26` | CirculateNotify
-`27` | CirculateRequest
-`28` | PropertyNotify
-`29` | SelectionClear
-`30` | SelectionRequest
-`31` | SelectionNotify
-`32` | ColormapNotify
-`33` | ClientMessage
-`34` | MappingNotify
-`35` | GenericEvent
-`36` | LASTEvent
-
-</details>
 
 If you can't figure out what some events are, don't worry, because you probably
 won't need them. If you do, go read [the documentation of each X11 events](https://tronche.com/gui/x/xlib/events/).
@@ -116,39 +86,21 @@ one key when it triggers, or to all keys if you leave your mask to the default.
 Key masks therefore allow you to whitelist / blacklist events from your event
 subscriptions. The following masks are allowed:
 
-<details>
-  <summary>See: List of X11 masks</summary>
-
-Mask       | Description
-:---------:| -----------
-`0L`       | NoEventMask
-`(1L<<0)`  | KeyPressMask
-`(1L<<1)`  | KeyReleaseMask
-`(1L<<2)`  | ButtonPressMask
-`(1L<<3)`  | ButtonReleaseMask
-`(1L<<4)`  | EnterWindowMask
-`(1L<<5)`  | LeaveWindowMask
-`(1L<<6)`  | PointerMotionMask
-`(1L<<7)`  | PointerMotionHintMask
-`(1L<<8)`  | Button1MotionMask
-`(1L<<9)`  | Button2MotionMask
-`(1L<<10)` | Button3MotionMask
-`(1L<<11)` | Button4MotionMask
-`(1L<<12)` | Button5MotionMask
-`(1L<<13)` | ButtonMotionMask
-`(1L<<14)` | KeymapStateMask
-`(1L<<15)` | ExposureMask
-`(1L<<16)` | VisibilityChangeMask
-`(1L<<17)` | StructureNotifyMask
-`(1L<<18)` | ResizeRedirectMask
-`(1L<<19)` | SubstructureNotifyMask
-`(1L<<20)` | SubstructureRedirectMask
-`(1L<<21)` | FocusChangeMask
-`(1L<<22)` | PropertyChangeMask
-`(1L<<23)` | ColormapChangeMask
-`(1L<<24)` | OwnerGrabButtonMask
-
-</details>
+| Mask       | Description      | | Mask       | Description          |
+| :--------: | ---------------- |-| :--------: | -------------------- |
+| `0L`       | NoEventMask      | | `(1L<<12)` | Button5MotionMask    |
+| `(1L<<0)`  | KeyPressMask     | | `(1L<<13)` | ButtonMotionMask     |
+| `(1L<<1)`  | KeyReleaseMask   | | `(1L<<14)` | KeymapStateMask      |
+| `(1L<<2)`  | ButtonPressMask  | | `(1L<<15)` | ExposureMask         |
+| `(1L<<3)`  | ButtonReleaseMask| | `(1L<<16)` | VisibilityChangeMask |
+| `(1L<<4)`  | EnterWindowMask  | | `(1L<<17)` | StructureNotifyMask  |
+| `(1L<<5)`  | LeaveWindowMask  | | `(1L<<18)` | ResizeRedirectMask   |
+| `(1L<<6)`  | PointerMotionMask| | `(1L<<19)` | SubstructureNotifyMask  |
+|`(1L<<7)`|PointerMotionHintMask| | `(1L<<20)` | SubstructureRedirectMask|
+| `(1L<<8)`  | Button1MotionMask| | `(1L<<21)` | FocusChangeMask      |
+| `(1L<<9)`  | Button2MotionMask| | `(1L<<22)` | PropertyChangeMask   |
+| `(1L<<10)` | Button3MotionMask| | `(1L<<23)` | ColormapChangeMask   |
+| `(1L<<11)` | Button4MotionMask| | `(1L<<24)` | OwnerGrabButtonMask  |
 
 ## Hooking into events
 
