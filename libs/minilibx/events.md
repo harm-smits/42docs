@@ -27,11 +27,44 @@ All hooks in MiniLibX are nothing more than a function that gets called whenever
 a event is triggered. Mastering all these events won't be neccessary, however,
 we will quickly go over each X11 event accordingly.
 
-## X11 events
+### MacOS version
+
+Note: On MacOS - Cocoa (AppKit) and OpenGL - version, minilibx has partial support
+of X11 events and doesn't support X11 mask (x_mask argument of mlx_hook is useless,
+keep it at 0).
+
+<details>
+  <summary>See: Supported events</summary>
+  
+```c
+enum {
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEDOWN = 4,
+	ON_MOUSEUP = 5,
+	ON_MOUSEMOVE = 6,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+};
+
+// usage:
+mlx_hook(vars.win, ON_DESTROY, 0, close, &vars);
+```
+  
+</details>
+
+## X11 interface
 
 X11 is the library that is used alongside of MiniLibX. It therefore is no secret
 that this header is very useful for finding all the according events of
-MiniLibX. There are a number of events to which you may describe.
+MiniLibX.
+
+### X11 events
+
+There are a number of events to which you may describe.
+
+<details>
+  <summary>See: List of X11 events</summary>
 
 Key  | Event
 :---:| -----
@@ -71,15 +104,20 @@ Key  | Event
 `35` | GenericEvent
 `36` | LASTEvent
 
-If you can't figure out what some events are, don't worry, because you probably
-won't need them. If you do, go read the documentation of each X11 function.
+</details>
 
-## X11 masks
+If you can't figure out what some events are, don't worry, because you probably
+won't need them. If you do, go read [the documentation of each X11 events](https://tronche.com/gui/x/xlib/events/).
+
+### X11 masks
 
 Each X11 event, also has a according mask. This way you can register to only
 one key when it triggers, or to all keys if you leave your mask to the default.
 Key masks therefore allow you to whitelist / blacklist events from your event
 subscriptions. The following masks are allowed:
+
+<details>
+  <summary>See: List of X11 masks</summary>
 
 Mask       | Description
 :---------:| -----------
@@ -110,7 +148,11 @@ Mask       | Description
 `(1L<<23)` | ColormapChangeMask
 `(1L<<24)` | OwnerGrabButtonMask
 
+</details>
+
 ## Hooking into events
+
+### mlx_hook
 
 Hooking into events is one of the most powerful tools that MiniLibX provides. It
 allows you to register to any of the aforementioned events with the call of a
@@ -145,6 +187,14 @@ int	main(void)
 
 Here we register to the `KeyPress` event with the according `KeyPressMask`. Now
 whenever we press a key, the window will be closed.
+
+### Hooking alias
+
+Minilibx api has some alias hooking function:
+
+ - `mlx_expose_hook` function is an alias of mlx_hook on expose event (`3`).
+ - `mlx_key_hook` function is an alias of mlx_hook on key up event (`4`).
+ - `mlx_mouse_hook` function is an alias of mlx_hook on mouse down event (`12`).
 
 ## Test your skills!
 
