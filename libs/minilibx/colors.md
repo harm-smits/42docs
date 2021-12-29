@@ -42,10 +42,17 @@ blue  | `0x000000FF`
 
 ## Encoding and decoding colors
 
-Since each byte contains 2^8 values, and RGB values range from 0 to 255, we can
-perfectly fit a integer (as an int is 4 bytes). In order to set the values
-programatically we use `bitshifting`. Let's create a function which does
-precisely that for us, shall we?
+We can use two methods to encode and decode colors:
+
+ - BitShifting
+ - char/int conversion
+
+### BitShifting
+
+Since each byte contains `2^8 = 256` values ([1 byte = 8 bits](https://www.google.com/search?q=size+bytes+to+bit)),
+and RGB values range from 0 to 255, we can perfectly fit a integer (as an
+int is 4 bytes). In order to set the values programatically we use `bitshifting`.
+Let's create a function which does precisely that for us, shall we?
 
 ```c
 int	create_trgb(int t, int r, int g, int b)
@@ -61,17 +68,17 @@ retrieve integer values from a encoded TRGB integer.
 ```c
 int	get_t(int trgb)
 {
-	return (trgb & (0xFF << 24));
+	return ((trgb >> 24) & 0xFF);
 }
 
 int	get_r(int trgb)
 {
-	return (trgb & (0xFF << 16));
+	return ((trgb >> 16) & 0xFF);
 }
 
 int	get_g(int trgb)
 {
-	return (trgb & (0xFF << 8));
+	return ((trgb >> 8) & 0xFF);
 }
 
 int	get_b(int trgb)
@@ -79,6 +86,50 @@ int	get_b(int trgb)
 	return (trgb & 0xFF);
 }
 ```
+
+### Char/int conversion
+
+Since each byte contains `2^8 = 256` values ([1 byte = 8 bits](https://www.google.com/search?q=size+bytes+to+bit)),
+and RGB values range from 0 to 255, we can perfectly fit a `unsigned char` for each TRGB parameters `{T, R, G, B}`
+(char is 1 byte) and fit a `int` for the TRGB value (int is 4 bytes). In order to set the values programatically
+we use type converting.
+
+```c
+int	create_trgb(unsigned char t, unsigned char r, unsigned char g, unsigned char b)
+{
+	return (*(int *)(unsigned char [4]){b, g, r, t});
+}
+
+unsigned char	get_t(int trgb)
+{
+	return (((unsigned char *)&trgb)[3]);
+}
+
+unsigned char	get_r(int trgb)
+{
+	return (((unsigned char *)&trgb)[2]);
+}
+
+unsigned char	get_g(int trgb)
+{
+	return (((unsigned char *)&trgb)[1]);
+}
+
+unsigned char	get_b(int trgb)
+{
+	return (((unsigned char *)&trgb)[0]);
+}
+```
+
+To understand the conversion you can refere to the table bellow, where `0x0FAE1`
+is the variable address of `int trgb`.
+
+| Address |       char      |       int       |
+| ------- | :-------------: | :-------------: |
+| 0x0FAE1 | unsigned char b | int trgb        |
+| 0x0FAE2 | unsigned char g | [allocated]     |
+| 0x0FAE3 | unsigned char r | [allocated]     |
+| 0x0FAE4 | unsigned char t | [allocated]     |
 
 ## Test your skills!
 
