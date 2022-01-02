@@ -8,8 +8,10 @@ ga_tracking: UA-158921873-1
 
 # Aux links for the upper right navigation
 aux_links:
-  "42docs on GitHub":
+  "Github":
     - "//github.com/harm-smits/42docs"
+  "Connect with me on LinkedIn":
+    - "//www.linkedin.com/in/harmsmits/"
 
 remote_theme: pmarsceill/just-the-docs
 plugins:
