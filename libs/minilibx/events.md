@@ -124,6 +124,7 @@ typedef struct	s_vars {
 int	close(int keycode, t_vars *vars)
 {
 	mlx_destroy_window(vars->mlx, vars->win);
+	return (0);
 }
 
 int	main(void)
