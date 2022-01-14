@@ -3,7 +3,7 @@ layout: default
 title: Colors
 parent: MiniLibX
 grand_parent: Libs
-nav_order: 2
+nav_order: 3
 ---
 
 # Colors
