@@ -141,13 +141,29 @@ int	main(void)
 Here we register to the `KeyPress` event with the according `KeyPressMask`. Now
 whenever we press a key, the window will be closed.
 
+### Prototype of event functions
+
+Event functions have different prototype depending of the hooking event.
+
+| Hooking event | code | Prototype            |
+| ------------- | :--: | -------------------- |
+| ON_KEYDOWN    |   2  | `keydown(int keycode, t_vars *vars)`   |
+| ON_KEYUP*     |   3  | `keyup(int keycode, t_vars *vars)` |
+| ON_MOUSEDOWN* |   4  | `mousedown(int keycode, int x, int y, t_vars *vars)` |
+| ON_MOUSEUP    |   5  | `mouseup(int keycode, int x, int y, t_vars *vars)` |
+| ON_MOUSEMOVE  |   6  | `mousemove(int x, int y, t_vars *vars)` |
+| ON_EXPOSE*    |  12  | `expose(t_vars *vars)` |
+| ON_DESTROY    |  17  | `close(t_vars *vars)` |
+
+*\*Has mlx_hook alias.*
+
 ### Hooking alias
 
 Minilibx api has some alias hooking function:
 
- - `mlx_expose_hook` function is an alias of mlx_hook on expose event (`3`).
- - `mlx_key_hook` function is an alias of mlx_hook on key up event (`4`).
- - `mlx_mouse_hook` function is an alias of mlx_hook on mouse down event (`12`).
+ - `mlx_expose_hook` function is an alias of mlx_hook on expose event (`12`).
+ - `mlx_key_hook` function is an alias of mlx_hook on key up event (`3`).
+ - `mlx_mouse_hook` function is an alias of mlx_hook on mouse down event (`4`).
 
 ## Test your skills!
 
