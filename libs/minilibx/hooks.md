@@ -3,7 +3,7 @@ layout: default
 title: Hooks
 parent: MiniLibX
 grand_parent: Libs
-nav_order: 4
+nav_order: 5
 ---
 
 # Hooks
