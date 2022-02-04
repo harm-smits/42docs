@@ -64,7 +64,7 @@ MiniLibX for Linux requires `xorg`, `x11` and `zlib`, therefore you will need to
 install the following dependencies: `xorg`, `libxext-dev` and `zlib1g-dev`.
 Installing these dependencies on Ubuntu can be done as follows:
 ```sh
-sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev
+sudo apt-get update && sudo apt-get install xorg libxext-dev zlib1g-dev libbsd-dev
 ```
 Now all thats left is to configure MLX, just run the `configure` script in the
 root of the given repository, and you are good to go.
