@@ -81,7 +81,7 @@ won't need them. If you do, go read [the documentation of each X11 events](https
 
 ### X11 masks
 
-Each X11 event, also has a according mask. This way you can register to only
+Each X11 event, also has an according mask. This way you can register to only
 one key when it triggers, or to all keys if you leave your mask to the default.
 Key masks therefore allow you to whitelist / blacklist events from your event
 subscriptions. The following masks are allowed:
